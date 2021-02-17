@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="attention_0.1.0">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/resources"/>
+        <property name="java-output-path" value="/attention_0.1.0/resources/WEB-INF/classes"/>
+        <property name="context-root" value="attention_0.1.0"/>
+    </wb-module>
+</project-modules>

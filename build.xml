@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="bdp-nuts" basedir="." default="tar">
+
+    <property file="build.properties"/>
+    <!--源码目录-->
+    <property name="source.dir" value="${basedir}"/>
+    <!--打包目录-->
+    <property name="build.dir" value="${basedir}/ant-build"/>
+    <!--编译的文件存放目录-->
+    <property name="classes.dir" value="${build.dir}/classes" />
+    <!--编译依赖的lib包目录-->
+    <property name="lib.dir" value="${build.dir}/resources/WEB-INF/lib" />
+    <!--目标编译文件目录-->
+    <property name="dest.build.dir" value="${build.dir}/src/com/"/>
+    <!--目标包名-->
+    <!--jar包名-->
+    <property name="jar.package.name" value="${package.name}-${package.version}" />
+
+    <!--打包日期-->
+    <tstamp>
+        <format property="touch.date" pattern="yyyyMMdd"/>
+    </tstamp>
+    <!--zip包名-->
+    <property name="zip.package.name" value="${package.name}-install-runtime-${package.version}-allsystem-${touch.date}" />
+
+    <!-- 程序用到的第三方JAR包 -->
+    <path id="lib.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+
+    <!--第一步：将所有文件拷贝到ant-build目录下-->
+    <target name="javac">
+        <!--先清空打包目录-->
+        <delete dir="${build.dir}"/>
+        <mkdir dir="${build.dir}"/>
+        <copy todir="${build.dir}" encoding="utf-8">
+            <fileset dir="${source.dir}">
+                <include name="src/**" />
+                <include name="resources/**" />
+                <exclude name="resources/nuts-release-note"/>
+                <exclude name="build.xml"/>
+            </fileset>
+        </copy>
+
+        <!--第二步：将framework目录编译-->
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${build.dir}/src" destdir="${classes.dir}" encoding="UTF-8" debug="true" debuglevel="lines,vars,source" includeantruntime="on">
+            <classpath refid="lib.classpath" />
+        </javac>
+    </target>
+
+
+    <target name="jar" depends="javac">
+        <!--第三步：将framework编译后的目录打成jar包-->
+        <jar destfile="${build.dir}\${jar.package.name}.jar" basedir="${classes.dir}"  encoding="utf-8"/>
+    </target>
+
+    <target name="tar" depends="jar">
+        <!--第四步：将framework的jar包拷贝到resources/WEB-INF/lib/目录下-->
+        <move todir="${lib.dir}" file="${build.dir}\${jar.package.name}.jar"  encoding="utf-8"/>
+        <!--第五步：删除src目录下的framework文件夹-->
+        <delete dir="${dest.build.dir}"/>
+        <delete dir="${classes.dir}"/>
+
+        <move todir="${build.dir}/resources/WEB-INF/classes">
+            <fileset dir="${build.dir}/src">
+                <include name="**" />
+            </fileset>
+        </move>
+
+        <move todir="${build.dir}/webapp">
+            <fileset dir="${build.dir}/resources">
+                <include name="**" />
+            </fileset>
+        </move>
+
+        <move todir="${build.dir}/${package.name}-${package.version}/" file="${build.dir}/webapp"  encoding="utf-8"/>
+        <copy file="${source.dir}/install.sh" todir="${build.dir}/${package.name}-${package.version}/"  encoding="utf-8"/>
+        <copy file="${source.dir}/install_config.sh" todir="${build.dir}/${package.name}-${package.version}/"  encoding="utf-8"/>
+        <copy file="${source.dir}/globe.common.conf" todir="${build.dir}/${package.name}-${package.version}/"  encoding="utf-8"/>
+        <!--第六步：将整个目录打成zip包。压缩时使用GBK编码，否则文件名乱码-->
+        <tar basedir="${build.dir}" destfile="${build.dir}/${zip.package.name}.tar.gz"  compression="gzip"/>
+    </target>
+</project>

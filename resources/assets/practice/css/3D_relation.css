@@ -1,0 +1,22 @@
+h2 {
+    margin: 16px;
+    font-size: 24px;
+    color: #fff;
+}
+
+button {
+    margin-left: 16px;
+    border: none;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #1ab9f4;
+    cursor: pointer;
+}
+#gameContainer {
+    height: 100%;
+    overflow: hidden;
+}
+
+.webgl-content .footer {
+    display: none;
+}

@@ -1,0 +1,431 @@
+* {
+    box-sizing:border-box
+}
+html {
+    font-family:sans-serif;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    margin:0;
+    padding:0
+}
+body {
+    margin:0;
+    overflow: hidden;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display:block
+}
+audio, canvas, progress, video {
+    display:inline-block;
+    vertical-align:baseline
+}
+audio:not([controls]) {
+    display:none;
+    height:0
+}
+[hidden], template {
+    display:none
+}
+a {
+    background-color:transparent
+}
+a:active, a:hover {
+    outline:0
+}
+abbr[title] {
+    border-bottom:1px dotted
+}
+b, strong {
+    font-weight:bold
+}
+dfn {
+    font-style:italic
+}
+h1 {
+    font-size:2em;
+    margin:0.67em 0
+}
+mark {
+    background:#ff0;
+    color:#000
+}
+small {
+    font-size:80%
+}
+sub, sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline
+}
+sup {
+    top:-0.5em
+}
+sub {
+    bottom:-0.25em
+}
+img {
+    border:0
+}
+svg:not(:root) {
+    overflow:hidden
+}
+figure {
+    margin:1em 40px
+}
+hr {
+    box-sizing:content-box;
+    height:0
+}
+pre {
+    overflow:auto
+}
+code, kbd, pre, samp {
+    font-family:monospace, monospace;
+    font-size:1em
+}
+button, input, optgroup, select, textarea {
+    color:inherit;
+    font:inherit;
+    margin:0
+}
+button {
+    overflow:visible
+}
+button, select {
+    text-transform:none
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance:button;
+    cursor:pointer
+}
+button[disabled], html input[disabled] {
+    cursor:default
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border:0;
+    padding:0
+}
+input {
+    line-height:normal
+}
+input[type="checkbox"], input[type="radio"] {
+    box-sizing:border-box;
+    padding:0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    height:auto
+}
+input[type="search"] {
+    -webkit-appearance:textfield;
+    box-sizing:content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance:none
+}
+fieldset {
+    border:1px solid #c0c0c0;
+    margin:0 2px;
+    padding:0.35em 0.625em 0.75em
+}
+legend {
+    border:0;
+    padding:0
+}
+textarea {
+    overflow:auto
+}
+optgroup {
+    font-weight:bold
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0
+}
+td, th {
+    padding:0
+}
+@keyframes dataMove {
+    from {
+        opacity:1;
+        top:-96px
+    }
+    to {
+        opacity:0;
+        top:192px
+    }
+}
+@-webkit-keyframes dataMove {
+    from {
+        opacity:1;
+        top:-96px
+    }
+    to {
+        opacity:0;
+        top:192px
+    }
+}
+html, body {
+    background:#03070e;
+    width:100%;
+    height:100%
+}
+#progressVisWrap {
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    min-width:1440px;
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/bg.png) no-repeat;
+    background-size:cover
+}
+#progressVisWrap header {
+    position:absolute;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:90px
+}
+#progressVisWrap header .head-left {
+    padding-left:24px;
+    display:flex
+}
+#progressVisWrap header .head-left .logo {
+    margin-right:8px
+}
+#progressVisWrap header .head-left .title {
+    color:#fff
+}
+#progressVisWrap header .head-left .title .ch-text {
+    font-size:16px;
+    padding-top:4px
+}
+#progressVisWrap header .head-left .title .en-text {
+    font-size:12px
+}
+#progressVisWrap header .head-right {
+    padding-right:24px;
+    color:#dbdfea;
+    opacity:.9;
+    display:flex
+}
+#progressVisWrap header .head-right .time-box2 {
+    font-size:36px;
+    font-weight:bold
+}
+#progressVisWrap header .head-right .time-box1 .week {
+    padding-top:8px;
+    padding-left:8px
+}
+#progressVisWrap header .head-right .time-box1 .date1 {
+    padding-left:8px
+}
+#progressVisWrap header .head-right .time-box3 {
+    position:relative;
+    color:#dbdfea;
+    margin-right:24px
+}
+#progressVisWrap header .head-right .time-box3::before {
+    content:"";
+    height:60%;
+    width:1px;
+    background:#dbdfea;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:-14px
+}
+#progressVisWrap header .head-right .time-box3 .time {
+    font-size:19px
+}
+#progressVisWrap header .head-right .weather {
+    display:flex;
+    color:#dbdfea
+}
+#progressVisWrap header .head-right .weather img {
+    width:30px;
+    height:22px;
+    margin-right:8px;
+    margin-top:14px
+}
+#progressVisWrap header .head-right .weather .weather-detail {
+    margin-top:6px
+}
+#progressVisWrap .content {
+    position:absolute;
+    left:50%;
+    top:143px;
+    transform:translateX(-50%);
+    width:1568px;
+    height:862px;
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/structure.png) 0 0 no-repeat
+}
+#progressVisWrap .content svg {
+    opacity:0
+}
+#progressVisWrap .content .path1, #progressVisWrap .content .path2, #progressVisWrap .content .path3, #progressVisWrap .content .path4, #progressVisWrap .content .path5, #progressVisWrap .content .path6, #progressVisWrap .content .path7, #progressVisWrap .content .path8, #progressVisWrap .content .path9, #progressVisWrap .content .path10, #progressVisWrap .content .path11, #progressVisWrap .content .path12, #progressVisWrap .content .path13, #progressVisWrap .content .path14 {
+    position:absolute
+}
+#progressVisWrap .content .path1 .green-detail, #progressVisWrap .content .path2 .green-detail, #progressVisWrap .content .path3 .green-detail, #progressVisWrap .content .path4 .green-detail, #progressVisWrap .content .path5 .green-detail, #progressVisWrap .content .path6 .green-detail, #progressVisWrap .content .path7 .green-detail, #progressVisWrap .content .path8 .green-detail, #progressVisWrap .content .path9 .green-detail, #progressVisWrap .content .path10 .green-detail, #progressVisWrap .content .path11 .green-detail, #progressVisWrap .content .path12 .green-detail, #progressVisWrap .content .path13 .green-detail, #progressVisWrap .content .path14 .green-detail {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/green_detail.png) center center no-repeat;
+    position:absolute;
+    width:45px;
+    height:8px;
+    left:-8px;
+    top:-8px
+}
+#progressVisWrap .content .path1 .green-point, #progressVisWrap .content .path1 .red-point, #progressVisWrap .content .path1 .purple-point, #progressVisWrap .content .path1 .lightgreen-point, #progressVisWrap .content .path2 .green-point, #progressVisWrap .content .path2 .red-point, #progressVisWrap .content .path2 .purple-point, #progressVisWrap .content .path2 .lightgreen-point, #progressVisWrap .content .path3 .green-point, #progressVisWrap .content .path3 .red-point, #progressVisWrap .content .path3 .purple-point, #progressVisWrap .content .path3 .lightgreen-point, #progressVisWrap .content .path4 .green-point, #progressVisWrap .content .path4 .red-point, #progressVisWrap .content .path4 .purple-point, #progressVisWrap .content .path4 .lightgreen-point, #progressVisWrap .content .path5 .green-point, #progressVisWrap .content .path5 .red-point, #progressVisWrap .content .path5 .purple-point, #progressVisWrap .content .path5 .lightgreen-point, #progressVisWrap .content .path6 .green-point, #progressVisWrap .content .path6 .red-point, #progressVisWrap .content .path6 .purple-point, #progressVisWrap .content .path6 .lightgreen-point, #progressVisWrap .content .path7 .green-point, #progressVisWrap .content .path7 .red-point, #progressVisWrap .content .path7 .purple-point, #progressVisWrap .content .path7 .lightgreen-point, #progressVisWrap .content .path8 .green-point, #progressVisWrap .content .path8 .red-point, #progressVisWrap .content .path8 .purple-point, #progressVisWrap .content .path8 .lightgreen-point, #progressVisWrap .content .path9 .green-point, #progressVisWrap .content .path9 .red-point, #progressVisWrap .content .path9 .purple-point, #progressVisWrap .content .path9 .lightgreen-point, #progressVisWrap .content .path10 .green-point, #progressVisWrap .content .path10 .red-point, #progressVisWrap .content .path10 .purple-point, #progressVisWrap .content .path10 .lightgreen-point, #progressVisWrap .content .path11 .green-point, #progressVisWrap .content .path11 .red-point, #progressVisWrap .content .path11 .purple-point, #progressVisWrap .content .path11 .lightgreen-point, #progressVisWrap .content .path12 .green-point, #progressVisWrap .content .path12 .red-point, #progressVisWrap .content .path12 .purple-point, #progressVisWrap .content .path12 .lightgreen-point, #progressVisWrap .content .path13 .green-point, #progressVisWrap .content .path13 .red-point, #progressVisWrap .content .path13 .purple-point, #progressVisWrap .content .path13 .lightgreen-point, #progressVisWrap .content .path14 .green-point, #progressVisWrap .content .path14 .red-point, #progressVisWrap .content .path14 .purple-point, #progressVisWrap .content .path14 .lightgreen-point {
+    position:absolute;
+    width:8px;
+    height:8px;
+    left:-8px;
+    top:-8px
+}
+#progressVisWrap .content .path1 .green-point, #progressVisWrap .content .path2 .green-point, #progressVisWrap .content .path3 .green-point, #progressVisWrap .content .path4 .green-point, #progressVisWrap .content .path5 .green-point, #progressVisWrap .content .path6 .green-point, #progressVisWrap .content .path7 .green-point, #progressVisWrap .content .path8 .green-point, #progressVisWrap .content .path9 .green-point, #progressVisWrap .content .path10 .green-point, #progressVisWrap .content .path11 .green-point, #progressVisWrap .content .path12 .green-point, #progressVisWrap .content .path13 .green-point, #progressVisWrap .content .path14 .green-point {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/green_point.png) center center no-repeat
+}
+#progressVisWrap .content .path1 .red-point, #progressVisWrap .content .path2 .red-point, #progressVisWrap .content .path3 .red-point, #progressVisWrap .content .path4 .red-point, #progressVisWrap .content .path5 .red-point, #progressVisWrap .content .path6 .red-point, #progressVisWrap .content .path7 .red-point, #progressVisWrap .content .path8 .red-point, #progressVisWrap .content .path9 .red-point, #progressVisWrap .content .path10 .red-point, #progressVisWrap .content .path11 .red-point, #progressVisWrap .content .path12 .red-point, #progressVisWrap .content .path13 .red-point, #progressVisWrap .content .path14 .red-point {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/red_point.png) center center no-repeat
+}
+#progressVisWrap .content .path1 .purple-point, #progressVisWrap .content .path2 .purple-point, #progressVisWrap .content .path3 .purple-point, #progressVisWrap .content .path4 .purple-point, #progressVisWrap .content .path5 .purple-point, #progressVisWrap .content .path6 .purple-point, #progressVisWrap .content .path7 .purple-point, #progressVisWrap .content .path8 .purple-point, #progressVisWrap .content .path9 .purple-point, #progressVisWrap .content .path10 .purple-point, #progressVisWrap .content .path11 .purple-point, #progressVisWrap .content .path12 .purple-point, #progressVisWrap .content .path13 .purple-point, #progressVisWrap .content .path14 .purple-point {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/purple_point.png) center center no-repeat
+}
+#progressVisWrap .content .path1 .lightgreen-point, #progressVisWrap .content .path2 .lightgreen-point, #progressVisWrap .content .path3 .lightgreen-point, #progressVisWrap .content .path4 .lightgreen-point, #progressVisWrap .content .path5 .lightgreen-point, #progressVisWrap .content .path6 .lightgreen-point, #progressVisWrap .content .path7 .lightgreen-point, #progressVisWrap .content .path8 .lightgreen-point, #progressVisWrap .content .path9 .lightgreen-point, #progressVisWrap .content .path10 .lightgreen-point, #progressVisWrap .content .path11 .lightgreen-point, #progressVisWrap .content .path12 .lightgreen-point, #progressVisWrap .content .path13 .lightgreen-point, #progressVisWrap .content .path14 .lightgreen-point {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/lightgreen_point.png) center center no-repeat
+}
+#progressVisWrap .content .path1 {
+    left:-24px;
+    bottom:8px
+}
+#progressVisWrap .content .path2 {
+    left:294px;
+    top:131px
+}
+#progressVisWrap .content .path3 {
+    left:19px;
+    top:61px
+}
+#progressVisWrap .content .path4 {
+    left:510px;
+    top:85px
+}
+#progressVisWrap .content .path5 {
+    left:374px;
+    top:3px
+}
+#progressVisWrap .content .path6 {
+    left:811px;
+    top:56px
+}
+#progressVisWrap .content .path7 {
+    left:828px;
+    top:91px
+}
+#progressVisWrap .content .path8 {
+    left:872px;
+    top:64px
+}
+#progressVisWrap .content .path9 {
+    left:340px;
+    top:364px
+}
+#progressVisWrap .content .path10 {
+    left:242px;
+    top:421px
+}
+#progressVisWrap .content .path11 {
+    left:117px;
+    top:515px
+}
+#progressVisWrap .content .path12 {
+    left:297px;
+    top:539px
+}
+#progressVisWrap .content .path13 {
+    left:807px;
+    top:538px
+}
+#progressVisWrap .content .path14 {
+    left:925px;
+    top:513px
+}
+#progressVisWrap .content .box {
+    position:absolute;
+    left:116px;
+    top:-10px
+}
+#progressVisWrap .content .building {
+    position:absolute;
+    left:-23px;
+    top:-105px
+}
+#progressVisWrap .content .middle-data {
+    position:absolute;
+    left:697px;
+    top:179px;
+    width:178px;
+    height:293px;
+    overflow:hidden
+}
+#progressVisWrap .content .middle-data .data {
+    background:url(<%ctxPath%>/components/com/senior-data-governance/1.0.0/images/middle_data.png) no-repeat;
+    position:absolute;
+    width:178px;
+    height:293px;
+    animation:dataMove 6s linear infinite;
+    -webkit-animation:dataMove 6s linear infinite;
+    opacity:0
+}
+#progressVisWrap .content .middle-data .data ~ .data {
+    animation-delay:2s;
+    -webkit-animation-delay:2s
+}
+#progressVisWrap .content .middle-data .data ~ .data ~ .data {
+    animation-delay:4s;
+    -webkit-animation-delay:4s
+}
+#progressVisWrap .content .top-text {
+    position:absolute;
+    left:737px;
+    top:220px;
+    width:92px;
+    height:275px
+}
+#progressVisWrap .content .screen-text {
+    position:absolute;
+    left:683px;
+    top:-50px;
+    width:226px;
+    height:96px;
+    overflow:hidden
+}
+#progressVisWrap .content .screen-text .text {
+    position:absolute;
+    width:226px;
+    height:96px;
+    animation:dataMove 9s linear infinite;
+    -webkit-animation:dataMove 9s linear infinite;
+    opacity:0
+}
+#progressVisWrap .content .screen-text .text ~ .text {
+    animation-delay:3s;
+    -webkit-animation-delay:3s
+}
+#progressVisWrap .content .screen-text .text ~ .text ~ .text {
+    animation-delay:6s;
+    -webkit-animation-delay:6s
+}
+#progressVisWrap .content .screen-text .text .info-text {
+    color:#fff;
+    margin-bottom:5px;
+    opacity:0.7
+}
+#progressVisWrap .content .screen-text .text .color-green {
+    color:#01e7fc
+}
